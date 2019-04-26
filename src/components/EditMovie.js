@@ -39,7 +39,7 @@ class AddMovie extends Component {
 
 	choiseMovie = event => {
 		const { adminGetMovieProps, clearPosterFunc } = this.props
-
+		// @twixDuo forEach needs to be used instead of map below. map should take a pure function without side effects
 		const movieItem = adminGetMovieProps.map(movie => {
 			if (movie._id === event.target.parentNode.id) {
 				this.setState({ movieItem: movie, moviePoster: movie.poster })
