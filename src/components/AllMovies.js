@@ -17,6 +17,7 @@ class AllMovies extends Component {
 	rentOn = () => {
 		const { adminGetMovieProps } = this.props
 		const rentOn = adminGetMovieProps.filter(value => {
+			// @twixDuo newDate can be moved to the outer scope to avoid redefining it for every row
 			const newDate = moment().format('YYYY.MM.DD')
 			const rentStart = moment(value.rentStart).format('YYYY.MM.DD')
 			const rentEnd = moment(value.rentEnd).format('YYYY.MM.DD')
